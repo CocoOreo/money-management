@@ -8,10 +8,10 @@ import 'react-vant/lib/index.css'
 import { ConfigProvider } from 'react-vant'
 
 const themeVars = {
-  '--rv-button-primary-border-color': '#F3DA53',
-  '--rv-button-primary-background-color': '#F3DA53',
-  '--rv-primary-color': '#F3DA53',
-  '--rv-success-color': '#F3DA53',
+  '--rv-button-primary-border-color': '#FDDA44',
+  '--rv-button-primary-background-color': '#FDDA44',
+  '--rv-primary-color': '#FDDA44',
+  '--rv-success-color': '#FDDA44',
   '--rv-text-color': '#0B0B09',
   '--rv-background-color': '#F3D953',
   '--rv-background-color-light': 'white'
