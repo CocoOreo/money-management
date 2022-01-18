@@ -1,0 +1,83 @@
+.header-wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: $color-background;
+  height: 140px;
+  box-shadow: 0 0 25px 30px $color-background;
+  z-index: 100;
+  .logo-wrapper {
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    color: $color-text;
+    padding: 20px;
+    font-size: $font-size-large-x;
+    h1 {
+      font-weight: 400;
+    }
+  }
+  .detail-wrapper {
+    display: flex;
+    .calendar {
+      flex-grow: 1;
+      border-right: 1px solid rgba($color: #000000, $alpha: 0.4);
+      padding-left: 6px;
+      padding-right: 12px;
+      .title {
+        color: $color-text;
+        font-size: $font-size-small;
+        margin-bottom: 0.4rem;
+      }
+      .content {
+        color: $color-text;
+        font-size: $font-size-large;
+        span {
+          font-size: $font-size-medium;
+        }
+      }
+      .icon {
+        display: inline-block;
+      }
+    }
+    .detail {
+      flex-grow: 2;
+      .title {
+        color: $color-text;
+        font-size: $font-size-small;
+        margin-bottom: 0.4rem;
+      }
+      .content {
+        color: $color-text;
+        font-size: $font-size-large;
+        span {
+          font-size: $font-size-medium;
+        }
+      }
+    }
+  }
+  .bar-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    .icon-wrapper {
+      display: flex;
+      padding: 10px 0 10px 0;
+      .icon {
+        flex-grow: 1;
+        display: inline-block;
+        font-size: 30px;
+        color: black;
+      }
+      div {
+        font-size: $font-size-medium;
+        color: $color-text-l;
+        margin-top: 4px;
+      }
+    }
+  }
+}
