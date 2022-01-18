@@ -3,7 +3,7 @@ module.exports = (req, res, next) => {
   console.log('body =>', req.body)
   console.log('method =>', req.method)
   if (req.method === 'POST') {
-    if (req.path === '/api/login' || req.path === '/api/register') {
+    if (req.path === '/login' || req.path === '/register') {
       if (req.body.username === '123' && req.body.password === '123') {
         return res.status('200').json({
           user: {
