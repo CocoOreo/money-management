@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Config from '../config/index'
 import { getToken } from './auth'
+import qs from 'qs'
 
 axios.defaults.headers = {
   'Content-Type': 'application/json;charset=utf-8'
@@ -32,5 +33,9 @@ axios.interceptors.response.use(
 )
 
 export const request = (options) => {
-  return axios.request(options)
+  const { method, data } = options
+  if (!method || method.toUpperCase() === 'GET') {
+    options.url += `?${qs.stringify(data)}`
+  }
+  return axios.request({ method: 'GET', ...options })
 }

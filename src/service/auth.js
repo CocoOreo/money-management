@@ -14,7 +14,7 @@ export const getToken = () => {
 
 export const login = async (data) => {
   return request({
-    url: '/api/login',
+    url: '/login',
     method: 'POST',
     data
   }).then(res => {
@@ -25,7 +25,8 @@ export const login = async (data) => {
 }
 
 export const register = async (data) => {
-  return request('/api/login', {
+  return request({
+    url: '/register',
     method: 'POST',
     data
   }).then(res => {
