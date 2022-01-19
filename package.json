@@ -7,7 +7,9 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
+    "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -18,6 +20,9 @@
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-query": "^3.34.8",
+    "react-redux": "^7.2.6",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "react-vant": "^1.4.11",
@@ -29,13 +34,21 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "server": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js"
+    "server": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js",
+    "server-delay": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js --delay 1000"
   },
   "eslintConfig": {
-    "extends": ["react-app", "react-app/jest"]
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

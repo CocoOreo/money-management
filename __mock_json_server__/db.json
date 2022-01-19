@@ -1,0 +1,136 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "tom1",
+      "age": "21"
+    },
+    {
+      "id": 2,
+      "name": "tom2",
+      "age": "22"
+    }
+  ],
+  "grade": {
+    "score": 100,
+    "user_id": "10001",
+    "grade": "A"
+  },
+  "monthly-balance": {
+    "id": 1,
+    "year": 2022,
+    "month": 1,
+    "income": 200.97,
+    "expense": 192.97
+  },
+  "detail-list": [
+    {
+      "id": 1,
+      "month": 1,
+      "day": 13,
+      "year": 2022,
+      "amount": -98,
+      "list": [
+        {
+          "category": "Gift",
+          "icon": "gift-o",
+          "type": 0,
+          "amount": 193
+        },
+        {
+          "category": "Work",
+          "icon": "user-o",
+          "type": 1,
+          "amount": 24
+        },
+        {
+          "category": "Play",
+          "icon": "service-o",
+          "type": 0,
+          "amount": 13
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "month": 1,
+      "day": 12,
+      "year": 2022,
+      "amount": 398,
+      "list": [
+        {
+          "category": "Gift",
+          "icon": "shopping-cart-o",
+          "type": 0,
+          "amount": 193
+        },
+        {
+          "category": "Work",
+          "icon": "user-o",
+          "type": 1,
+          "amount": 24
+        },
+        {
+          "category": "Play",
+          "icon": "service-o",
+          "type": 0,
+          "amount": 13
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "month": 1,
+      "day": 12,
+      "year": 2022,
+      "amount": 28,
+      "list": [
+        {
+          "category": "Gift",
+          "icon": "user-o",
+          "type": 0,
+          "amount": 193
+        },
+        {
+          "category": "Work",
+          "icon": "shopping-cart-o",
+          "type": 1,
+          "amount": 24
+        },
+        {
+          "category": "Play",
+          "icon": "service-o",
+          "type": 0,
+          "amount": 13
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "month": 1,
+      "day": 12,
+      "year": 2022,
+      "amount": -8,
+      "list": [
+        {
+          "category": "Gift",
+          "icon": "user-o",
+          "type": 0,
+          "amount": 193
+        },
+        {
+          "category": "Work",
+          "icon": "shopping-cart-o",
+          "type": 1,
+          "amount": 24
+        },
+        {
+          "category": "Play",
+          "icon": "service-o",
+          "type": 0,
+          "amount": 13
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+.shadow-card {
+  position: relative;
+  background-color: $color-white-background;
+  box-shadow: 0 0 4px 0px $color-grey-background;
+  font-size: $font-size-medium;
+  box-sizing: border-box;
+}

@@ -6,23 +6,37 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import 'react-vant/lib/index.css'
 import { ConfigProvider } from 'react-vant'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
+import { store } from 'store/index'
+
+const queryClient = new QueryClient()
 
 const themeVars = {
-  '--rv-button-primary-border-color': '#F3DA53',
-  '--rv-button-primary-background-color': '#F3DA53',
-  '--rv-primary-color': '#F3DA53',
-  '--rv-success-color': '#F3DA53',
+  '--rv-button-primary-border-color': '#FDDA44',
+  '--rv-button-primary-background-color': '#FDDA44',
+  '--rv-primary-color': '#FDDA44',
+  '--rv-success-color': '#FDDA44',
   '--rv-text-color': '#0B0B09',
   '--rv-background-color': '#F3D953',
-  '--rv-background-color-light': 'white'
+  '--rv-background-color-light': 'white',
+  '--rv-tabbar-height': '60px',
+  '--rv-tabbar-item-active-color': '#FDDA44',
+  '--rv-tabbar-item-text-color': '#0B0B09',
+  '--rv-cell-text-color': '#0B0B09',
+  '--rv-loading-spinner-color': 'black'
 }
 
 ReactDOM.render(
   <React.StrictMode>
     <ConfigProvider themeVars={themeVars}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Provider store={store}>
+             <App />
+          </Provider>
+        </BrowserRouter>
+      </QueryClientProvider>
     </ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')

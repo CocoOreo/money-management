@@ -1,0 +1,39 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  span {
+    color: $color-text-l !important;
+  }
+  .button-wrapper {
+    width: 30px;
+    height: 100%;
+    .circle-border {
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: 0 0 1px 0px rgba($color: #000000, $alpha: 0.1);
+      transform: translate3d(-17px, -37px, 0);
+    }
+    .button {
+      width: 52px;
+      height: 52px;
+      position: relative;
+      left: -12px;
+      bottom: 32px;
+      font-size: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      z-index: 100;
+      background-color: $color-theme;
+      box-shadow: 0 0 1px 0px $color-theme;
+      > * {
+        font-size: 30px;
+      }
+    }
+  }
+}
