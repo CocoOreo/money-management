@@ -1,0 +1,40 @@
+.expense-list {
+  position: relative;
+  width: 100%;
+  background-color: $color-background;
+  .title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: $color-text-ll;
+    border-bottom: 1px solid rgba($color: $color-grey-background, $alpha: 0.3);
+    padding: 5px 0 5px 0;
+  }
+  .item-wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    color: rgba($color: black, $alpha: 0.65);
+    font-size: $font-size-medium;
+    .left {
+      display: flex;
+      .icon-wrapper {
+        margin-right: 12px;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        background-color: rgba($color: $color-grey-background, $alpha: 0.2);
+        border-radius: 50%;
+        color: rgba($color: black, $alpha: 0.8);
+        font-size: $font-size-large-x;
+      }
+      .category-wrapper {
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+}
