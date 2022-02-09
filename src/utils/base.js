@@ -3,7 +3,7 @@ export const getInteger = (num) => {
 }
 
 export const getFraction = (num) => {
-  return Number(num.toString().split('.')[1])
+  return Number(num.toString().split('.')[1]) || 0
 }
 
 export const getDate = () => {

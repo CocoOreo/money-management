@@ -33,7 +33,7 @@
   "prettier.semi": false, // 不要给语句加;
   "prettier.singleQuote": true, // 采用单引号
   "prettier.trailingComma": "none", // 不要尾随逗号,
-  "prettier.printWidth": 80, // 每行超过20列就换行
+  "prettier.printWidth": 80, // 每行超过80列就换行
 
   // 在.js中，写div按下tab就可以自动补全，而不需要写<div再补全
   "emmet.includeLanguages": {
