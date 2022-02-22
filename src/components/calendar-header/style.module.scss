@@ -1,9 +1,12 @@
 .calendar-header {
   background-color: $color-background;
   .type {
-    margin: 18px;
+    margin: 18px 30px;
     font-size: $font-size-large;
-    font-weight: 420;
+    font-weight: bold;
+    i {
+      padding-left: 8px;
+    }
   }
   .calendar {
     margin: 10px;
