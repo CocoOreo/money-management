@@ -1,19 +1,23 @@
 import { CalendarHeader } from 'components/calendar-header'
-import React from 'react'
+import { LineChart } from 'components/line-chart'
+import React, { useState } from 'react'
 import { statusSlice } from 'store/slices/statusSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 export const ChartScreen = () => {
   const currentType = useSelector((state) => state.status.type)
   const currentScope = useSelector((state) => state.status.scope)
+  const [xAixis] = useState([1, 2, 3, 4, 5, 6])
+  const [tabs] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9])
+  const [chartData] = useState([130, 240, 270, 60, 100, 24])
+
   const dispatch = useDispatch()
 
   const onTypeChange = (param) => {
-    console.log('onTypechange =>', param)
-    dispatch(statusSlice.actions.setType(param.type))
+    const { type } = param
+    dispatch(statusSlice.actions.setType(type))
   }
   const onScopeChange = (param) => {
-    console.log('onScopechange =>', param)
     dispatch(statusSlice.actions.setScope(param.index))
   }
   return (
@@ -24,7 +28,7 @@ export const ChartScreen = () => {
         currentScope={currentScope}
         currentType={currentType}
       />
-      <div>Chart Screen</div>
+      <LineChart xAxisData={xAixis} tabs={tabs} seriesData={chartData} />
     </div>
   )
 }
