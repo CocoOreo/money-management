@@ -12,9 +12,10 @@ export const LineChart = (props) => {
   const { tabs, xAxisData, seriesData } = props
   const [tabList] = useState(tabs || [])
   const options = {
-    grid: { height: 150, top: 8, right: 10, bottom: 24, left: 10 },
+    color: ['#5F5F5F'],
+    grid: { height: 120, top: 8, right: 10, bottom: 24, left: 10 },
     legend: {
-      height: 100,
+      height: 80,
       width: 10
     },
     xAxis: {
@@ -40,7 +41,7 @@ export const LineChart = (props) => {
       <div className={style['tab-container']}>
         <Tabs titleInactiveColor="#9F9F9F" titleActiveColor="black" active={0}>
           {tabList.map((item) => (
-            <Tabs.TabPane key={item} title={`标签${item}`}>
+            <Tabs.TabPane key={item} title={`Tab ${item}`}>
               <div className={style['chart-wrapper']}>
                 <div className={style.balance}>
                   <p>Total: </p>
@@ -50,7 +51,7 @@ export const LineChart = (props) => {
                   option={options}
                   notMerge={true}
                   lazyUpdate={true}
-                  style={{ height: '200px' }}
+                  style={{ height: '180px' }}
                 />
               </div>
             </Tabs.TabPane>
