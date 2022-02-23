@@ -8,7 +8,6 @@ import style from './style.module.scss'
 
 export const CalendarHeader = (props) => {
   const { onScopeChange, onTypeChange, currentScope, currentType } = props
-  console.log('current =>', currentScope, currentType)
   const [scope, setScope] = useState(currentScope)
   const [type, setType] = useState(currentType)
 

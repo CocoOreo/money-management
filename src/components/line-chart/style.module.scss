@@ -10,9 +10,10 @@
       margin: 0px 6px 8px 6px;
       padding: 16px 0;
       color: $color-text-ll;
+      font-size: $font-size-medium;
       p:nth-child(2) {
-        margin-top: 3px;
-        font-size: $font-size-medium;
+        margin-top: 6px;
+        font-size: $font-size-small;
       }
     }
   }
