@@ -16,6 +16,8 @@
     "axios": "^0.24.0",
     "better-scroll": "^2.4.2",
     "craco-sass-resources-loader": "^1.1.0",
+    "echarts": "^5.3.0",
+    "echarts-for-react": "^3.0.2",
     "http-proxy-middleware": "^2.0.1",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
@@ -38,10 +40,17 @@
     "server-delay": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js --delay 1000"
   },
   "eslintConfig": {
-    "extends": ["react-app", "react-app/jest"]
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -57,6 +66,6 @@
     "eslint-plugin-react": "^7.28.0",
     "prettier": "^2.5.1"
   },
-  "proxy": "http://10.0.0.221:8080",
+  "proxy": "http://localhost:8888",
   "homepage": "."
 }

@@ -23,6 +23,11 @@
     "income": 200.97,
     "expense": 192.97
   },
+  "valid-choices": {
+    "weeks": [3, 4, 5, 6, 7, 8, 9],
+    "month": [1, 2],
+    "year": [2022]
+  },
   "detail-list": [
     {
       "id": 1,
@@ -132,5 +137,80 @@
         }
       ]
     }
-  ]
+  ],
+  "line-chart": {
+    "xAxis": ["2-20", "2-21", "2-22", "2-23", "2-24", "2-25", "2-26"],
+    "values": [120, 240, 50, 70, 60, 90, 100],
+    "total": 730,
+    "average": 104
+  },
+  "rank-list": {
+    "type": 0,
+    "id": 1,
+    "list": [
+      {
+        "category": "Gift",
+        "icon": "gift-o",
+        "type": 0,
+        "amount": 193,
+        "percentage": 60
+      },
+      {
+        "category": "Work",
+        "icon": "user-o",
+        "type": 1,
+        "amount": 24,
+        "percentage": 20
+      },
+      {
+        "category": "Play",
+        "icon": "service-o",
+        "type": 0,
+        "amount": 13,
+        "percentage": 10
+      },
+      {
+        "category": "Play",
+        "icon": "service-o",
+        "type": 0,
+        "amount": 13,
+        "percentage": 5
+      },
+      {
+        "category": "Play",
+        "icon": "service-o",
+        "type": 0,
+        "amount": 13,
+        "percentage": 5
+      },
+      {
+        "category": "Play",
+        "icon": "service-o",
+        "type": 0,
+        "amount": 13,
+        "percentage": 5
+      },
+      {
+        "category": "Gift",
+        "icon": "gift-o",
+        "type": 0,
+        "amount": 193,
+        "percentage": 5
+      },
+      {
+        "category": "Work",
+        "icon": "user-o",
+        "type": 1,
+        "amount": 24,
+        "percentage": 5
+      },
+      {
+        "category": "Play",
+        "icon": "service-o",
+        "type": 0,
+        "amount": 13,
+        "percentage": 5
+      }
+    ]
+  }
 }

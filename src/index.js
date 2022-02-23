@@ -24,7 +24,8 @@ const themeVars = {
   '--rv-tabbar-item-active-color': '#FDDA44',
   '--rv-tabbar-item-text-color': '#0B0B09',
   '--rv-cell-text-color': '#0B0B09',
-  '--rv-loading-spinner-color': 'black'
+  '--rv-loading-spinner-color': 'black',
+  '--rv-tabs-bottom-bar-color': 'black'
 }
 
 ReactDOM.render(

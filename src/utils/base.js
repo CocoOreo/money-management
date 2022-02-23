@@ -18,6 +18,14 @@ export const getDate = () => {
   }
 }
 
+export const getCurrentYearWeek = () => {
+  const { year } = getDate()
+  const cur = new Date()
+  const first = new Date(year, 0, 1)
+  const dis = Math.round((cur.valueOf() - first.valueOf()) / 86400000)
+  return Math.ceil((dis + ((first.getDay() + 1) - 1)) / 7)
+}
+
 export const getMonthWord = (month) => {
   const map = {
     1: 'Jan.',

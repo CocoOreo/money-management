@@ -1,0 +1,44 @@
+.rank-list {
+  position: relative;
+  width: 100%;
+  background-color: $color-white-background;
+  .title {
+    margin: 3px 0 3px 0;
+    font-size: $font-size-large;
+    font-weight: 400;
+  }
+  .item-wrapper {
+    display: grid;
+    padding: 10px 0px 10px 0px;
+    color: rgba($color: black, $alpha: 0.65);
+    font-size: $font-size-medium;
+    grid-template-columns: 1fr 5fr;
+    grid-auto-rows: 6fr 1fr;
+    grid-template-areas: 'icon category amount' 'icon progress progress';
+    .icon-wrapper {
+      grid-area: icon;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      background-color: rgba($color: $color-grey-background, $alpha: 0.2);
+      border-radius: 50%;
+      color: rgba($color: black, $alpha: 0.8);
+      font-size: $font-size-large-x;
+    }
+    .category-wrapper {
+      grid-area: category;
+      text-align: start;
+      span {
+        padding-left: 6px;
+        font-size: $font-size-small-s;
+      }
+    }
+    .progress-wrapper {
+      grid-area: progress;
+    }
+    .amount-wrapper {
+      grid-area: amount;
+    }
+  }
+}
