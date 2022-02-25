@@ -23,7 +23,7 @@ export const RecordCategoryScreen = () => {
         <div onClick={close}>Close</div>
         <div className={style['header-wrapper']}>
           Header {status}
-          <buuton>Expense</buuton>
+          <button>Expense</button>
         </div>
         <div className={style['category-list']}>
           <CategoryList />
