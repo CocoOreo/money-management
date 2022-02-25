@@ -35,6 +35,9 @@ export const DetailHeader = ({ props }) => {
   const handleClickChart = () => {
     navigate('/chart')
   }
+  const handleClickRank = () => {
+    navigate('/rank')
+  }
   return (
     <div>
       <div className={style['header-wrapper']}>
@@ -91,7 +94,7 @@ export const DetailHeader = ({ props }) => {
                 <Icon name="balance-list-o" />
                 <div>Chart</div>
               </div>
-              <div className={style.icon}>
+              <div className={style.icon} onClick={handleClickRank}>
                 <Icon name="bar-chart-o" />
                 <div>Rank</div>
               </div>
