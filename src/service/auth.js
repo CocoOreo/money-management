@@ -18,7 +18,10 @@ export const login = async (data) => {
     method: 'POST',
     data
   }).then(res => {
-    return handleUserResponse(res)
+    if (res && res.user) {
+      return handleUserResponse(res)
+    }
+    return null
   }).catch(error => {
     throw new Error(error)
   })
