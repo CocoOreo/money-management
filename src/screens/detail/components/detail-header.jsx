@@ -31,11 +31,9 @@ export const DetailHeader = ({ props }) => {
   }
   const handleClickAdd = () => {
     dispatch(recordSlice.actions.setShowAddModal(true))
-    console.log('Add')
   }
   const handleClickChart = () => {
     navigate('/chart')
-    console.log('Chart')
   }
   return (
     <div>
