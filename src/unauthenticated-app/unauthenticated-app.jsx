@@ -8,7 +8,6 @@ export const UnauthenticatedApp = () => {
 
   const onFinish = async (values) => {
     //   {username: 'xxx', password: 'xxx'}
-    console.log('form submit', values)
     // Send request
     const data = await login(values)
     console.log('data =>', data)
