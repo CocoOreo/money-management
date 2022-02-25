@@ -1,7 +1,8 @@
 import style from './style.module.scss'
-import React from 'react'
-import { List, Cell, Icon } from 'react-vant'
+import React, { useState } from 'react'
+import { List, Cell, Icon, Overlay } from 'react-vant'
 import { getMonthWord } from 'utils/base'
+import { useSearchParams } from 'react-router-dom'
 
 // Prop Type Example
 // list = [
@@ -23,7 +24,23 @@ import { getMonthWord } from 'utils/base'
 //   }
 // ]
 
-export const ExpenseList = ({ list }) => {
+export const ExpenseList = ({ list, onClickIcon, onClickAmount }) => {
+  const [showOverlay, setShowOverlay] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const handleClickIcon = (item) => {
+    console.log(searchParams)
+    setSearchParams({ id: item.id })
+    onClickIcon(item)
+  }
+  const handleClickAmount = (item) => {
+    setSearchParams({ id: item.id })
+    setShowOverlay(true)
+    onClickAmount(item)
+  }
+  const closeOverlay = () => {
+    setSearchParams({})
+    setShowOverlay(false)
+  }
   return (
     <div className={style['expense-list']}>
       <List>
@@ -48,16 +65,28 @@ export const ExpenseList = ({ list }) => {
                     {item.list.length ? (
                       item.list.map((item, index) => {
                         return (
-                          <div className={style['item-wrapper']} key={index}>
+                          <div
+                            className={
+                              Number(searchParams.get('id')) === item.id ? (
+                                `${style['item-wrapper']} ${style.highlight}`
+                              ) : (
+                                `${style['item-wrapper']}`
+                              )
+                            }
+                            key={index}>
                             <div className={style.left}>
-                              <div className={style['icon-wrapper']}>
+                              <div
+                                className={style['icon-wrapper']}
+                                onClick={() => handleClickIcon(item)}>
                                 <Icon name={item.icon} />
                               </div>
                               <div className={style['category-wrapper']}>
                                 {item.category}
                               </div>
                             </div>
-                            <div className={style.right}>
+                            <div
+                              className={style.right}
+                              onClick={() => handleClickAmount(item)}>
                               <div>
                                 {item.type ? (
                                   `+${item.amount}`
@@ -77,6 +106,7 @@ export const ExpenseList = ({ list }) => {
           })
         ) : null}
       </List>
+      <Overlay visible={showOverlay} zIndex={110} onClick={closeOverlay} />
     </div>
   )
 }
