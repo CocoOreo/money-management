@@ -1,0 +1,20 @@
+.list-wrapper {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: black;
+  .icon-block {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    color: black;
+    .icon {
+      flex-grow: 1;
+      display: inline-block;
+      font-size: 30px;
+      color: black;
+    }
+  }
+}
