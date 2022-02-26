@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './style.module.scss'
 import { Tabbar, Icon } from 'react-vant'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -12,10 +12,19 @@ export const Footer = ({ tabs, ...rest }) => {
   const navigate = useNavigate()
   // because of the plus button, there will be five elements in the bar
   // so the values of four tabs will be 0 1 3 4
-  const index =
-    tabs.findIndex((item) => item.path === location.pathname) > 1
+  const getPathIndex = () => {
+    return tabs.findIndex((item) => item.path === location.pathname) > 1
       ? tabs.findIndex((item) => item.path === location.pathname) + 1
       : tabs.findIndex((item) => item.path === location.pathname)
+  }
+  // Listen to the change of location
+  useEffect(
+    () => {
+      setCurrent(getPathIndex())
+    },
+    [location]
+  )
+  const index = getPathIndex()
   const [current, setCurrent] = useState(index)
   //   The number of tabs can only be four, and it will be divided into two parts, left and right
   const left = tabs.slice(0, 2)
@@ -26,7 +35,6 @@ export const Footer = ({ tabs, ...rest }) => {
     setCurrent(value)
   }
   const onClick = () => {
-    console.log('click add')
     dispatch(recordSlice.actions.setShowAddModal(true))
   }
   return (

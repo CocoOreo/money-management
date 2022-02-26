@@ -37,18 +37,21 @@
       "amount": -98,
       "list": [
         {
+          "id": 123,
           "category": "Gift",
           "icon": "gift-o",
           "type": 0,
           "amount": 193
         },
         {
+          "id": 124,
           "category": "Work",
           "icon": "user-o",
           "type": 1,
           "amount": 24
         },
         {
+          "id": 125,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
@@ -64,18 +67,21 @@
       "amount": 398,
       "list": [
         {
+          "id": 126,
           "category": "Gift",
           "icon": "shopping-cart-o",
           "type": 0,
           "amount": 193
         },
         {
+          "id": 127,
           "category": "Work",
           "icon": "user-o",
           "type": 1,
           "amount": 24
         },
         {
+          "id": 128,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
@@ -91,18 +97,21 @@
       "amount": 28,
       "list": [
         {
+          "id": 129,
           "category": "Gift",
           "icon": "user-o",
           "type": 0,
           "amount": 193
         },
         {
+          "id": 130,
           "category": "Work",
           "icon": "shopping-cart-o",
           "type": 1,
           "amount": 24
         },
         {
+          "id": 131,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
@@ -118,18 +127,21 @@
       "amount": -8,
       "list": [
         {
+          "id": 132,
           "category": "Gift",
           "icon": "user-o",
           "type": 0,
           "amount": 193
         },
         {
+          "id": 133,
           "category": "Work",
           "icon": "shopping-cart-o",
           "type": 1,
           "amount": 24
         },
         {
+          "id": 134,
           "category": "Play",
           "icon": "service-o",
           "type": 0,

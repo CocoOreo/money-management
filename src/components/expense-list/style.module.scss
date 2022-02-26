@@ -36,5 +36,14 @@
         line-height: 36px;
       }
     }
+    .right {
+      line-height: 36px;
+      height: 36px;
+    }
+  }
+  .highlight {
+    z-index: 120;
+    background-color: white;
+    position: relative;
   }
 }
