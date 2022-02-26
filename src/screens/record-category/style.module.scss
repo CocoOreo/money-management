@@ -1,4 +1,7 @@
 .header-wrapper {
   background-color: $color-theme;
   width: 100%;
+  --rv-tabs-nav-background-color: $color-theme;
+  --rv-tab-text-color: black;
+  --rv-tab-font-size: large;
 }

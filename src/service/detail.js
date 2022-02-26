@@ -15,3 +15,11 @@ export const getDetailList = (data) => {
     data
   })
 }
+
+export const addRecord = (data) => {
+  return request({
+    url: '/add-record',
+    method: 'POST',
+    data
+  })
+}
