@@ -55,12 +55,12 @@ export const RecordCategoryScreen = () => {
         position="bottom"
         visible={showCategoryModal}
         style={{ height: '100%' }}>
-        <div onClick={close}>Close</div>
         <div className={style['header-wrapper']}>
           Header {status}
           <Tabs active={0}>
             {[expenseTab, incomeTab].map((item, index) => (
               <Tabs.TabPane key={index} title={item.name}>
+                <div onClick={close}>back</div>
                 <div className={style['category-list']}>
                   <CategoryList
                     type={0}

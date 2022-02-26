@@ -28,7 +28,7 @@ export const DetailHeader = ({ props }) => {
     <div>
       <div className={style['header-wrapper']}>
         <div className={style['logo-wrapper']}>
-          <h1>TILE</h1>
+          <h1>Turbo Money</h1>
         </div>
         <div className={style['detail-wrapper']}>
           <div className={style.calendar}>
