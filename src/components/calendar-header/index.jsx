@@ -15,27 +15,28 @@ export const CalendarHeader = (props) => {
   const handleChangeScope = (index, callback) => {
     if (index === scope) return
     setScope(index)
-    if (typeof callback === 'function') {
-      const param = {
-        index,
-        name: tabs[index]
-      }
-      callback(param)
+    // if (typeof callback === 'function') {
+    const param = {
+      index,
+      name: tabs[index]
     }
+    callback(param)
+    // }
   }
   const handleChangeType = (type, callback) => {
     setType(Number(!type))
-    if (typeof callback === 'function') {
-      const param = {
-        type,
-        name: type ? 'Income' : 'Expense'
-      }
-      callback(param)
+    // if (typeof callback === 'function') {
+    const param = {
+      type,
+      name: type ? 'Income' : 'Expense'
     }
+    callback(param)
+    // }
   }
   return (
     <div className={style['calendar-header']}>
       <div
+        data-testid="exchange"
         className={style.type}
         onClick={() => handleChangeType(type, onTypeChange)}>
         <span style={{ marginRight: '5px' }}>
