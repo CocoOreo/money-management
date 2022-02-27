@@ -42,7 +42,7 @@ export const DetailHeader = ({ props }) => {
     <div>
       <div className={style['header-wrapper']}>
         <div className={style['logo-wrapper']}>
-          <h1>Turbo Money</h1>
+          <h1>TURBO</h1>
         </div>
         <div className={style['detail-wrapper']}>
           <div className={style.calendar}>
@@ -113,7 +113,7 @@ export const DetailHeader = ({ props }) => {
           visible={showDatePicker}
           onConfirm={onConfirm}
           confirmButtonText={'OK'}
-          cancelButtonText={'Cancel'}
+          cancelButtonText={'  '}
           minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
           maxDate={new Date()}
           value={new Date()}

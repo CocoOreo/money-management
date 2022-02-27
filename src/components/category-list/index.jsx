@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Icon,
-  NumberKeyboard,
-  Calendar,
-  ConfigProvider,
-  Popup
-} from 'react-vant'
+import { Icon, NumberKeyboard, Calendar, ConfigProvider } from 'react-vant'
 // import locale from './enUs'
 import style from './style.module.scss'
 
@@ -53,14 +47,16 @@ export const CategoryList = (props) => {
           </div>
         )
       })}
-
-      <Popup position="bottom" visible={stateNum.visible} overlay={false}>
-        <div>record: {stateNum.value}</div>
-      </Popup>
-
+      <div
+        className={style['amount-popup']}
+        style={
+          stateNum.visible ? { display: 'block' } : { visibility: 'hidden' }
+        }>
+        <div className={style['amount-wrapper']}>Amount: {stateNum.value}</div>
+      </div>
       <NumberKeyboard
         theme="custom"
-        extraKey={['.', 'Date']}
+        extraKey={['.']}
         closeButtonText="Enter"
         value={stateNum.value}
         onChange={(v) => setNumState({ value: v, visible: true })}
@@ -69,8 +65,8 @@ export const CategoryList = (props) => {
         onInput={(param) => onInput(param)}
         onDelete={() => onDelete()}
         safeAreaInsetBottom={true}
+        zIndex={3000}
       />
-
       <ConfigProvider>
         <Calendar
           visible={visibleDate}
