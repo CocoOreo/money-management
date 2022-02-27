@@ -34,28 +34,28 @@
       "month": 1,
       "day": 13,
       "year": 2022,
-      "amount": -98,
+      "amount": -200,
       "list": [
         {
           "id": 123,
           "category": "Gift",
           "icon": "gift-o",
           "type": 0,
-          "amount": 193
+          "amount": 100
         },
         {
           "id": 124,
           "category": "Work",
           "icon": "user-o",
           "type": 1,
-          "amount": 24
+          "amount": 50
         },
         {
           "id": 125,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
-          "amount": 13
+          "amount": 50
         }
       ]
     },
@@ -64,28 +64,28 @@
       "month": 1,
       "day": 12,
       "year": 2022,
-      "amount": 398,
+      "amount": 298,
       "list": [
         {
           "id": 126,
           "category": "Gift",
           "icon": "shopping-cart-o",
           "type": 0,
-          "amount": 193
+          "amount": 198
         },
         {
           "id": 127,
           "category": "Work",
           "icon": "user-o",
           "type": 1,
-          "amount": 24
+          "amount": 100
         },
         {
           "id": 128,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
-          "amount": 13
+          "amount": 100
         }
       ]
     },
@@ -94,28 +94,28 @@
       "month": 1,
       "day": 12,
       "year": 2022,
-      "amount": 28,
+      "amount": 24,
       "list": [
         {
           "id": 129,
           "category": "Gift",
           "icon": "user-o",
-          "type": 0,
-          "amount": 193
+          "type": 1,
+          "amount": 18
         },
         {
           "id": 130,
           "category": "Work",
           "icon": "shopping-cart-o",
           "type": 1,
-          "amount": 24
+          "amount": 10
         },
         {
           "id": 131,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
-          "amount": 13
+          "amount": 4
         }
       ]
     },
@@ -131,21 +131,21 @@
           "category": "Gift",
           "icon": "user-o",
           "type": 0,
-          "amount": 193
+          "amount": 1
         },
         {
           "id": 133,
           "category": "Work",
           "icon": "shopping-cart-o",
           "type": 1,
-          "amount": 24
+          "amount": 1
         },
         {
           "id": 134,
           "category": "Play",
           "icon": "service-o",
           "type": 0,
-          "amount": 13
+          "amount": 8
         }
       ]
     }
@@ -164,63 +164,63 @@
         "category": "Gift",
         "icon": "gift-o",
         "type": 0,
-        "amount": 193,
+        "amount": 120,
         "percentage": 60
       },
       {
         "category": "Work",
         "icon": "user-o",
         "type": 1,
-        "amount": 24,
+        "amount": 40,
         "percentage": 20
       },
       {
         "category": "Travel",
         "icon": "guide-o",
         "type": 0,
-        "amount": 13,
+        "amount": 20,
         "percentage": 10
       },
       {
         "category": "Play",
         "icon": "service-o",
         "type": 0,
-        "amount": 13,
+        "amount": 10,
         "percentage": 5
       },
       {
         "category": "Phone",
         "icon": "phone-o",
         "type": 0,
-        "amount": 13,
+        "amount": 2,
         "percentage": 1
       },
       {
         "category": "Study",
         "icon": "edit",
         "type": 0,
-        "amount": 13,
+        "amount": 2,
         "percentage": 1
       },
       {
         "category": "Food",
         "icon": "records",
         "type": 0,
-        "amount": 193,
+        "amount": 2,
         "percentage": 1
       },
       {
         "category": "Videos",
         "icon": "tv-o",
         "type": 1,
-        "amount": 24,
+        "amount": 2,
         "percentage": 1
       },
       {
         "category": "Play",
         "icon": "service-o",
         "type": 0,
-        "amount": 13,
+        "amount": 2,
         "percentage": 1
       }
     ]

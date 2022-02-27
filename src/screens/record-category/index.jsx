@@ -22,9 +22,10 @@ export const RecordCategoryScreen = () => {
   return (
     <div>
       <Popup
-        position="bottom"
+        position="left"
         visible={showCategoryModal}
-        style={{ height: '100%' }}>
+        overlay={false}
+        style={{ height: '100vh', width: '100vw' }}>
         <div className={style['header-wrapper']}>
           <div className={style['back-wrapper']}>
             <div onClick={close}>

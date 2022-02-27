@@ -113,7 +113,7 @@ export const DetailHeader = ({ props }) => {
           visible={showDatePicker}
           onConfirm={onConfirm}
           confirmButtonText={'OK'}
-          cancelButtonText={'Cancel'}
+          cancelButtonText={'  '}
           minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
           maxDate={new Date()}
           value={new Date()}
