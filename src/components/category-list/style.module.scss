@@ -12,8 +12,8 @@
     padding: 22px 20px 30px 20px;
     color: $color-text-ll;
     background-color: rgba($color: #ffffff, $alpha: 1);
-    border-top: 1px solid rgba($color: #9f9f9f, $alpha: 1);
-    border-left: 1px solid rgba($color: #9f9f9f, $alpha: 1);
+    border-top: 2px solid rgba($color: $color-grey-background, $alpha: 1);
+    border-left: 2px solid rgba($color: $color-grey-background, $alpha: 1);
     border-radius: 20px;
     width: 100%;
     .amount-wrapper {
@@ -24,6 +24,9 @@
     margin: 16px 6px;
     text-align: center;
     color: black;
+    .active {
+      background-color: rgba($color: $color-theme, $alpha: 0.4) !important;
+    }
     .icon {
       margin: 16px auto;
       display: flex;
