@@ -1,38 +1,55 @@
 import React, { useState } from 'react'
 import { Icon, NumberKeyboard, Calendar, ConfigProvider } from 'react-vant'
+import { getMonthWord } from 'utils/base'
 // import locale from './enUs'
 import style from './style.module.scss'
 
 export const CategoryList = (props) => {
-  const { list, onClick, type } = props
-  const [stateNum, setNumState] = useState({
-    visible: false,
-    value: 0
-  })
-  const [visibleDate, setDateVisible] = useState(false)
-  const handleClick = (param) => {
-    if (type === 0) {
-      setNumState({ visible: true })
-      onClick(param)
-    } else if (type === 1) {
-      onClick(param)
+  const { list, type, onFinish } = props
+  const [selected, setSelected] = useState('')
+  const [numStr, setNumStr] = useState('')
+  const [date, setDate] = useState(new Date())
+  const [showKeyboard, setShowKeyboard] = useState(false)
+  const [showDate, setShowDate] = useState(false)
+  const handleClickIcon = (icon) => {
+    setShowKeyboard(true)
+    console.log(icon)
+    setSelected(icon.name)
+  }
+  const handleSelectDate = (param) => {
+    setDate(param)
+    setShowDate(false)
+  }
+  const handleKeyboardChange = (value) => {
+    if (!isNaN(value) || value === '.') {
+      setNumStr(value)
+      console.log(value)
+    } else {
+      setShowDate(true)
     }
-  }
-  const onInput = (v) => {
-    console.log(v)
-    if (v === 'Date') {
-      setDateVisible(true)
-    }
-  }
-  const onDelete = () => {
-    console.log('Delete')
-  }
-  const onSelect = (date) => {
-    console.log(date)
   }
   const handlDateClose = () => {
-    setDateVisible(false)
-    setNumState({ visible: true })
+    setShowDate(false)
+  }
+  const handleKeyboardBlur = () => {
+    if (!showDate) {
+      setShowKeyboard(false)
+      setNumStr('')
+      setSelected('')
+    }
+  }
+  const handleEnter = () => {
+    console.log('Click Enter')
+    if (numStr) {
+      const param = {
+        amount: Number(numStr),
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: date.getDate(),
+        type: type
+      }
+      onFinish(param)
+    }
   }
 
   return (
@@ -40,8 +57,16 @@ export const CategoryList = (props) => {
       {list.map((item, index) => {
         return (
           <div key={index} className={style['icon-block']}>
-            <div className={style.icon}>
-              <Icon name={item.name} onClick={() => handleClick(item.desc)} />
+            <div
+              className={
+                selected === item.name ? (
+                  `${style.icon} ${style.active}`
+                ) : (
+                  `${style.icon}`
+                )
+              }
+              onClick={() => handleClickIcon(item)}>
+              <Icon name={item.name} />
             </div>
             <p>{item.desc}</p>
           </div>
@@ -49,31 +74,36 @@ export const CategoryList = (props) => {
       })}
       <div
         className={style['amount-popup']}
-        style={
-          stateNum.visible ? { display: 'block' } : { visibility: 'hidden' }
-        }>
-        <div className={style['amount-wrapper']}>Amount: {stateNum.value}</div>
+        style={showKeyboard ? { display: 'block' } : { visibility: 'hidden' }}>
+        <div className={style['amount-wrapper']}>Amount: ${numStr}</div>
       </div>
       <NumberKeyboard
         theme="custom"
-        extraKey={['.']}
+        extraKey={['.', 'DATE']}
         closeButtonText="Enter"
-        value={stateNum.value}
-        onChange={(v) => setNumState({ value: v, visible: true })}
-        visible={stateNum.visible}
-        onBlur={() => setNumState({ visible: false })}
-        onInput={(param) => onInput(param)}
-        onDelete={() => onDelete()}
+        value={numStr}
+        onChange={handleKeyboardChange}
+        visible={showKeyboard}
+        onBlur={handleKeyboardBlur}
+        onClose={handleEnter}
         safeAreaInsetBottom={true}
         zIndex={3000}
       />
       <ConfigProvider>
         <Calendar
-          visible={visibleDate}
+          visible={showDate}
           onClose={() => {
             handlDateClose()
           }}
-          onSelect={(param) => onSelect(param)}
+          weekdays={['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thur.', 'Fri.', 'Sat']}
+          formatMonthTitle={(date) =>
+            date.getFullYear() + '  ' + getMonthWord(date.getMonth() + 1)}
+          confirmText={'Confirm'}
+          cancelButtonText={'  '}
+          title={'Calendar'}
+          onConfirm={handleSelectDate}
+          minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
+          maxDate={new Date()}
         />
       </ConfigProvider>
     </div>

@@ -6,6 +6,7 @@ import { recordSlice } from 'store/slices/recordSlice'
 import style from './style.module.scss'
 import { CategoryList } from 'components/category-list'
 import { expenseTab, incomeTab } from 'config/tabs'
+import { useAddRecord } from './useAddRecord'
 export const RecordCategoryScreen = () => {
   const showCategoryModal = useSelector(
     (state) => state.record.showCategoryModal
@@ -17,6 +18,13 @@ export const RecordCategoryScreen = () => {
   const onClickIcon = (item) => {
     console.log(item)
     // http
+  }
+  const { mutate: addRecord } = useAddRecord()
+  const onFinish = (record) => {
+    console.log('record', record)
+    try {
+      addRecord({ ...record })
+    } catch (error) {}
   }
 
   return (
@@ -38,8 +46,9 @@ export const RecordCategoryScreen = () => {
                 <Tabs.TabPane key={index} title={item.name}>
                   <div className={style['category-list']}>
                     <CategoryList
-                      type={0}
+                      type={index}
                       onClick={(param) => onClickIcon(param)}
+                      onFinish={onFinish}
                       list={item.list}
                     />
                   </div>
