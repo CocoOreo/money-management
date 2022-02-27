@@ -5,4 +5,5 @@ export const icons = [
   {
     icon: 'shopping-cart-o'
   }
+
 ]

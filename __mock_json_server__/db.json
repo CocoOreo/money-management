@@ -175,8 +175,8 @@
         "percentage": 20
       },
       {
-        "category": "Play",
-        "icon": "service-o",
+        "category": "Travel",
+        "icon": "guide-o",
         "type": 0,
         "amount": 13,
         "percentage": 10
@@ -189,39 +189,39 @@
         "percentage": 5
       },
       {
-        "category": "Play",
-        "icon": "service-o",
+        "category": "Phone",
+        "icon": "phone-o",
         "type": 0,
         "amount": 13,
-        "percentage": 5
+        "percentage": 1
       },
       {
-        "category": "Play",
-        "icon": "service-o",
+        "category": "Study",
+        "icon": "edit",
         "type": 0,
         "amount": 13,
-        "percentage": 5
+        "percentage": 1
       },
       {
-        "category": "Gift",
-        "icon": "gift-o",
+        "category": "Food",
+        "icon": "records",
         "type": 0,
         "amount": 193,
-        "percentage": 5
+        "percentage": 1
       },
       {
-        "category": "Work",
-        "icon": "user-o",
+        "category": "Videos",
+        "icon": "tv-o",
         "type": 1,
         "amount": 24,
-        "percentage": 5
+        "percentage": 1
       },
       {
         "category": "Play",
         "icon": "service-o",
         "type": 0,
         "amount": 13,
-        "percentage": 5
+        "percentage": 1
       }
     ]
   }

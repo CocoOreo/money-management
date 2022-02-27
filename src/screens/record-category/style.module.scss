@@ -3,5 +3,18 @@
   width: 100%;
   --rv-tabs-nav-background-color: $color-theme;
   --rv-tab-text-color: black;
-  --rv-tab-font-size: large;
+  --rv-tab-active-text-color: black;
+  --rv-tab-font-size: $font-size-large;
+  .tabs-wrapper {
+    &:nth-child(1) {
+      padding: 0px 20px;
+    }
+  }
+  .back-wrapper {
+    position: absolute;
+    right: 10px;
+    line-height: 44px;
+    z-index: 100;
+    padding: 0px 20px;
+  }
 }
