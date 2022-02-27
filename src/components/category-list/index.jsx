@@ -79,7 +79,7 @@ export const CategoryList = (props) => {
       </div>
       <NumberKeyboard
         theme="custom"
-        extraKey={['.', 'DATE']}
+        extraKey={['.', '☆']}
         closeButtonText="Enter"
         value={numStr}
         onChange={handleKeyboardChange}
