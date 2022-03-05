@@ -350,6 +350,24 @@
       "day": 28,
       "type": 0,
       "id": 12
+    },
+    {
+      "amount": 25,
+      "year": 2022,
+      "month": 3,
+      "day": 5,
+      "type": 0,
+      "id": 13
+    },
+    {
+      "amount": 85,
+      "year": 2022,
+      "month": 3,
+      "day": 5,
+      "type": 0,
+      "category": "Plants",
+      "icon": "flower-o",
+      "id": 14
     }
   ]
 }
