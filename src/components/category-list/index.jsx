@@ -6,6 +6,7 @@ import style from './style.module.scss'
 
 export const CategoryList = (props) => {
   const { list, type, onFinish } = props
+  const [category, setCategory] = useState('')
   const [selected, setSelected] = useState('')
   const [numStr, setNumStr] = useState('')
   const [date, setDate] = useState(new Date())
@@ -15,6 +16,7 @@ export const CategoryList = (props) => {
     setShowKeyboard(true)
     console.log(icon)
     setSelected(icon.name)
+    setCategory(icon.desc)
   }
   const handleSelectDate = (param) => {
     setDate(param)
@@ -46,7 +48,9 @@ export const CategoryList = (props) => {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
         day: date.getDate(),
-        type: type
+        type: type,
+        category: category,
+        icon: selected
       }
       onFinish(param)
     }
