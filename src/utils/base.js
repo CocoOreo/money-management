@@ -43,3 +43,16 @@ export const getMonthWord = (month) => {
   }
   return map[month]
 }
+
+export const cleanObject = (obj) => {
+  const res = { ...obj }
+  const isVoid = (value) => {
+    return value === undefined || value === null || value === ''
+  }
+  Object.keys(obj).forEach(key => {
+    if (isVoid(obj[key])) {
+      delete res[key]
+    }
+  })
+  return res
+}
