@@ -9,6 +9,7 @@ import { useValidChoices } from './useValidChoices'
 import { RankList } from 'components/rank-list'
 import { Loading } from 'react-vant'
 import { useLineChartData } from './useLineChartData'
+import { cleanObject } from 'utils/base'
 
 export const ChartScreen = () => {
   const currentType = useSelector((state) => state.status.type)
@@ -17,19 +18,21 @@ export const ChartScreen = () => {
   const currentMonth = useSelector((state) => state.status.month)
   const currentWeek = useSelector((state) => state.status.week)
   const [tabs, setTabs] = useState([])
-  const { data: rankList, isLoading: isListLoading } = useRankList({
-    year: currentYear,
-    month: currentScope === 0 ? null : currentMonth,
-    week: currentScope === 0 ? currentWeek : null,
-    type: currentScope
-  })
+  const { data: rankList, isLoading: isListLoading } = useRankList(
+    cleanObject({
+      year: currentScope === 2 ? currentYear : null,
+      month: currentScope === 1 ? currentMonth : null,
+      week: currentScope === 0 ? currentWeek : null
+    })
+  )
   const { data: choices } = useValidChoices()
-  const { data: chartData } = useLineChartData({
-    year: currentYear,
-    month: currentScope === 0 ? null : currentMonth,
-    week: currentScope === 0 ? currentWeek : null,
-    type: currentScope
-  })
+  const { data: chartData } = useLineChartData(
+    cleanObject({
+      year: currentScope === 2 ? currentYear : null,
+      month: currentScope === 1 ? currentMonth : null,
+      week: currentScope === 0 ? currentWeek : null
+    })
+  )
   useEffect(
     () => {
       if (choices) {

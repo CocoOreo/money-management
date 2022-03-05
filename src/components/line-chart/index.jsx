@@ -20,7 +20,7 @@ export const LineChart = (props) => {
     },
     xAxis: {
       type: 'category',
-      data: (chartData && chartData.xAxis) || []
+      data: (chartData && chartData['x-axis']) || []
     },
     yAxis: {
       show: false
