@@ -23,6 +23,13 @@ export const CategoryList = (props) => {
     setShowDate(false)
   }
   const handleKeyboardChange = (value) => {
+    if (
+      value.indexOf('.') !== value.length - 1 &&
+      value[value.length - 1] === '.'
+    ) {
+      setNumStr(value.slice(0, value.length - 1))
+      return
+    }
     if (!isNaN(value) || value === '.') {
       setNumStr(value)
       console.log(value)
