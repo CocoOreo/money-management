@@ -338,5 +338,8 @@
       "icon": "flower-o",
       "id": 14
     }
-  ]
+  ],
+  "budget": {
+    "budget": 1000
+  }
 }
