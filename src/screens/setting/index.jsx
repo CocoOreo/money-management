@@ -5,7 +5,7 @@ import { Header } from './components/header.jsx'
 import { getFraction, getInteger, getMonthWord, getDate } from 'utils/base'
 import { useMonthlyBalance } from './useMonthlyBalance'
 import { Loading, Circle, Button, NumberKeyboard } from 'react-vant'
-import { useGetBudget } from './useBudget'
+import { useGetBudget, usePatchBudget } from './useBudget'
 
 export const SettingScreen = () => {
   const { month: currentMonth, year: currentYear } = getDate()
@@ -16,7 +16,7 @@ export const SettingScreen = () => {
     month: currentMonth,
     year: currentYear
   })
-
+  const { mutate: patchBudget } = usePatchBudget()
   const { data: budget, isLoading: isBudgetLoading } = useGetBudget()
   const [rate, setRate] = useState(0)
 
@@ -29,7 +29,11 @@ export const SettingScreen = () => {
       const param = {
         budget: Number(value)
       }
-      console.log(param)
+      try {
+        patchBudget({ ...param })
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
   const onKeyboardChange = (num) => {
