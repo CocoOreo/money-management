@@ -1,21 +1,30 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Icon, NumberKeyboard, Calendar, ConfigProvider } from 'react-vant'
 import { getMonthWord } from 'utils/base'
 // import locale from './enUs'
 import style from './style.module.scss'
 
 export const CategoryList = (props) => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const { list, type, onFinish } = props
   const [category, setCategory] = useState('')
-  const [selected, setSelected] = useState('')
   const [numStr, setNumStr] = useState('')
   const [date, setDate] = useState(new Date())
   const [showKeyboard, setShowKeyboard] = useState(false)
   const [showDate, setShowDate] = useState(false)
+
+  const clearSearchParams = () => {
+    setSearchParams({ ...searchParams.delete('selected') })
+  }
+
   const handleClickIcon = (icon) => {
-    setShowKeyboard(true)
-    console.log(icon)
-    setSelected(icon.name)
+    if (searchParams.get('id') !== undefined) {
+      setSearchParams({ id: searchParams.get('id'), selected: icon.name })
+    } else {
+      setSearchParams({ selected: icon.name })
+      setShowKeyboard(true)
+    }
     setCategory(icon.desc)
   }
   const handleSelectDate = (param) => {
@@ -44,11 +53,10 @@ export const CategoryList = (props) => {
     if (!showDate) {
       setShowKeyboard(false)
       setNumStr('')
-      setSelected('')
+      clearSearchParams()
     }
   }
   const handleEnter = () => {
-    console.log('Click Enter')
     if (numStr) {
       const param = {
         amount: Number(numStr),
@@ -57,9 +65,10 @@ export const CategoryList = (props) => {
         day: date.getDate(),
         type: type,
         category: category,
-        icon: selected
+        icon: searchParams.get('selected')
       }
       onFinish(param)
+      clearSearchParams()
     }
   }
 
@@ -70,7 +79,7 @@ export const CategoryList = (props) => {
           <div key={index} className={style['icon-block']}>
             <div
               className={
-                selected === item.name ? (
+                searchParams.get('selected') === item.name ? (
                   `${style.icon} ${style.active}`
                 ) : (
                   `${style.icon}`

@@ -8,8 +8,11 @@ import { getDate } from 'utils/base'
 import { Loading } from 'react-vant'
 import { useDispatch } from 'react-redux'
 import { recordSlice } from 'store/slices/recordSlice'
+import { useSearchParams } from 'react-router-dom'
+import { useDeleteRecord, useEditRecord } from './useRecord'
 
 export const DetailScreen = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const { month, year } = getDate()
   const dispatch = useDispatch()
   const [currentMonth, setCurrentMonth] = useState(month)
@@ -19,8 +22,12 @@ export const DetailScreen = () => {
     year: currentYear
   })
   const { data: detailList, isLoading: isListLoading } = useDetailList()
+  const { mutate: deleteRecord } = useDeleteRecord()
+  const { mutate: editRecord } = useEditRecord()
   const onClickIcon = (item) => {
+    console.log(item)
     dispatch(recordSlice.actions.setShowAddModal(true))
+    setSearchParams({ ...searchParams, selected: item.icon, id: item.id })
   }
   const onClickAmount = (item) => {
     console.log(item)
@@ -44,6 +51,8 @@ export const DetailScreen = () => {
           <ExpenseList
             onClickIcon={onClickIcon}
             onClickAmount={onClickAmount}
+            onClickEnter={editRecord}
+            onClickDelete={deleteRecord}
             list={detailList}
           />
         )}

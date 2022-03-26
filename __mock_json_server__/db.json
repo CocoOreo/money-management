@@ -366,6 +366,16 @@
       "category": "Plants",
       "icon": "flower-o",
       "id": 14
+    },
+    {
+      "amount": 36,
+      "year": 2022,
+      "month": 3,
+      "day": 26,
+      "type": 0,
+      "category": "Clothing",
+      "icon": "bag-o",
+      "id": 15
     }
   ],
   "budget": {

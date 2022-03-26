@@ -47,3 +47,20 @@
     position: relative;
   }
 }
+
+.amount-popup {
+  position: fixed;
+  bottom: 228px;
+  padding: 22px 20px 30px 20px;
+  color: $color-text-ll;
+  background-color: rgba($color: #ffffff, $alpha: 1);
+  border-top: 2px solid rgba($color: $color-grey-background, $alpha: 1);
+  border-left: 2px solid rgba($color: $color-grey-background, $alpha: 1);
+  border-radius: 20px;
+  width: 100%;
+  z-index: 120;
+  .amount-wrapper {
+    font-size: $font-size-large;
+    text-align: start;
+  }
+}
