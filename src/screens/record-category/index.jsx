@@ -6,20 +6,31 @@ import { recordSlice } from 'store/slices/recordSlice'
 import style from './style.module.scss'
 import { CategoryList } from 'components/category-list'
 import { expenseTab, incomeTab } from 'config/tabs'
-import { useAddRecord } from './useAddRecord'
+import { useAddRecord, useEditRecord } from './useRecord'
+import { useSearchParams } from 'react-router-dom'
 export const RecordCategoryScreen = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const showCategoryModal = useSelector(
     (state) => state.record.showCategoryModal
   )
   const dispatch = useDispatch()
   const close = () => {
+    if (searchParams.get('id')) {
+      editRecord({
+        id: searchParams.get('id'),
+        icon: searchParams.get('selected')
+      })
+    }
     dispatch(recordSlice.actions.setShowAddModal(false))
+
+    setSearchParams({ ...searchParams.delete('selected') })
   }
   const onClickIcon = (item) => {
     console.log(item)
     // http
   }
   const { mutate: addRecord } = useAddRecord()
+  const { mutate: editRecord } = useEditRecord()
   const onFinish = (record) => {
     console.log('record', record)
     try {
