@@ -140,7 +140,7 @@ export const SettingScreen = () => {
                       rate={rate}
                       strokeWidth={80}
                       size={100}
-                      text={100 - rate > 0 ? `Rest ${100 - rate}%` : 'Overspending'}
+                      text={100 - rate > 0 ? `Rest ${100 - rate}%` : 'Over'}
                     />
                   </div>
                   <div className={style.rest}>
