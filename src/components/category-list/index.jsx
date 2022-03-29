@@ -19,8 +19,8 @@ export const CategoryList = (props) => {
   }
 
   const handleClickIcon = (icon) => {
-    if (searchParams.get('id') !== undefined) {
-      setSearchParams({ id: searchParams.get('id'), selected: icon.name })
+    if (searchParams.get('id')) {
+      setSearchParams({ id: searchParams.get('id'), selected: icon.name, category: icon.desc })
     } else {
       setSearchParams({ selected: icon.name })
       setShowKeyboard(true)

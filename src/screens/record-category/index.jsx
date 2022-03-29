@@ -1,3 +1,9 @@
+/*
+ * @Date: 2022-03-28 14:18:31
+ * @LastEditors: Shaowei Sun
+ * @LastEditTime: 2022-03-29 12:23:24
+ * @FilePath: \money-management\src\screens\record-category\index.jsx
+ */
 import React from 'react'
 import { Popup, Tabs, Icon } from 'react-vant'
 // import { WarningO } from '@react-vant/icons'
@@ -17,7 +23,8 @@ export const RecordCategoryScreen = () => {
   const close = () => {
     if (searchParams.get('id')) {
       editRecord({
-        id: searchParams.get('id'),
+        category: searchParams.get('category'),
+        _id: searchParams.get('id'),
         icon: searchParams.get('selected')
       })
     }
