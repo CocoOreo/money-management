@@ -3,8 +3,13 @@ import style from './detail.header.module.scss'
 import { ShadowCard } from 'components/shadow-card/index'
 import { getFraction, getInteger, getMonthWord } from 'utils/base'
 import { Icon, DatetimePicker, Popup, Loading } from 'react-vant'
+import { useDispatch } from 'react-redux'
+import { recordSlice } from 'store/slices/recordSlice'
+import { useNavigate } from 'react-router-dom'
 
 export const DetailHeader = ({ props }) => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const {
     monthlyBalance,
     setCurrentMonth,
@@ -24,11 +29,20 @@ export const DetailHeader = ({ props }) => {
     setCurrentMonth(selectedMonth)
     setCurrentYear(selectedYear)
   }
+  const handleClickAdd = () => {
+    dispatch(recordSlice.actions.setShowAddModal(true))
+  }
+  const handleClickChart = () => {
+    navigate('/chart')
+  }
+  const handleClickRank = () => {
+    navigate('/rank')
+  }
   return (
     <div>
       <div className={style['header-wrapper']}>
         <div className={style['logo-wrapper']}>
-          <h1>TILE</h1>
+          <h1>TURBO</h1>
         </div>
         <div className={style['detail-wrapper']}>
           <div className={style.calendar}>
@@ -72,15 +86,15 @@ export const DetailHeader = ({ props }) => {
         <div className={style['bar-wrapper']}>
           <ShadowCard width={'94%'} height={75} radius={8}>
             <div className={style['icon-wrapper']}>
-              <div className={style.icon}>
+              <div className={style.icon} onClick={handleClickAdd}>
                 <Icon name="add-o" />
                 <div>Add</div>
               </div>
-              <div className={style.icon}>
+              <div className={style.icon} onClick={handleClickChart}>
                 <Icon name="balance-list-o" />
                 <div>Chart</div>
               </div>
-              <div className={style.icon}>
+              <div className={style.icon} onClick={handleClickRank}>
                 <Icon name="bar-chart-o" />
                 <div>Rank</div>
               </div>
@@ -99,7 +113,7 @@ export const DetailHeader = ({ props }) => {
           visible={showDatePicker}
           onConfirm={onConfirm}
           confirmButtonText={'OK'}
-          cancelButtonText={'Cancel'}
+          cancelButtonText={'  '}
           minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
           maxDate={new Date()}
           value={new Date()}

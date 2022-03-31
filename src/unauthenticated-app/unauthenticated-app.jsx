@@ -1,17 +1,26 @@
 import React from 'react'
-import { Form, Button, Field, Cell } from 'react-vant'
+import { Form, Button, Field, Cell, Dialog } from 'react-vant'
 import style from './style.module.scss'
 import { login } from '../service/auth'
+import { useDispatch } from 'react-redux'
+import { userSlice } from 'store/slices/userSlick'
 
-export const UnauthenticatedApp = () => {
+export const UnauthenticatedApp = (props) => {
+  const { setToken } = props
+  const dispatch = useDispatch()
   const [form] = Form.useForm()
-
   const onFinish = async (values) => {
     //   {username: 'xxx', password: 'xxx'}
-    console.log('form submit', values)
     // Send request
     const data = await login(values)
-    console.log('data =>', data)
+    if (data) {
+      dispatch(userSlice.actions.setUser(data))
+      setToken(data.token)
+    } else {
+      Dialog.alert({
+        message: 'Hmmm, That didn.t work. Please try again'
+      })
+    }
   }
   return (
     <div className={style.app}>
@@ -27,10 +36,10 @@ export const UnauthenticatedApp = () => {
             </div>
           }>
           <Form.Item name="username" label="Username">
-            <Field />
+            <Field placeholder="Username" />
           </Form.Item>
           <Form.Item name="password" label="Password">
-            <Field type="password" />
+            <Field type="password" clearable placeholder="password" />
           </Form.Item>
         </Form>
       </Cell.Group>

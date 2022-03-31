@@ -15,3 +15,19 @@ export const getDetailList = (data) => {
     data
   })
 }
+
+export const editRecord = (data) => {
+  return request({
+    url: '/record',
+    method: 'PATCH',
+    data
+  })
+}
+
+export const deleteRecord = (data) => {
+  return request({
+    url: '/record',
+    method: 'DELETE',
+    data
+  })
+}
