@@ -38,9 +38,7 @@ export const CalendarHeader = (props) => {
         data-testid="exchange"
         className={style.type}
         onClick={() => handleChangeType(type, onTypeChange)}>
-        <span style={{ marginRight: '5px' }}>
-          {type === 0 ? 'EXPENSE' : 'INCOME'}
-        </span>
+        <span style={{ marginRight: '5px' }}>{'EXPENSE'}</span>
       </div>
       <div className={style.calendar}>
         {tabs.map((item, index) => {
