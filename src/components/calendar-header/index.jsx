@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Icon } from 'react-vant'
 import style from './style.module.scss'
 
 // Calendar Header
@@ -42,7 +41,6 @@ export const CalendarHeader = (props) => {
         <span style={{ marginRight: '5px' }}>
           {type === 0 ? 'EXPENSE' : 'INCOME'}
         </span>
-        <Icon name="exchange" />
       </div>
       <div className={style.calendar}>
         {tabs.map((item, index) => {

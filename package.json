@@ -36,7 +36,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "server": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js",
+    "server": "json-server __mock_json_server__/db.json --watch --port 8080 --middlewares __mock_json_server__/middleware.js",
     "server-delay": "json-server __mock_json_server__/db.json --watch --port 8888 --middlewares __mock_json_server__/middleware.js --delay 1000"
   },
   "eslintConfig": {
