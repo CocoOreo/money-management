@@ -1,3 +1,9 @@
+/*
+ * @Date: 2022-03-28 14:18:31
+ * @LastEditors: Shaowei Sun
+ * @LastEditTime: 2022-03-29 12:09:25
+ * @FilePath: \money-management\src\screens\detail\index.jsx
+ */
 import style from './style.module.scss'
 import React, { useState } from 'react'
 import { DetailHeader } from './components/detail-header'
@@ -27,10 +33,11 @@ export const DetailScreen = () => {
   const onClickIcon = (item) => {
     console.log(item)
     dispatch(recordSlice.actions.setShowAddModal(true))
-    setSearchParams({ ...searchParams, selected: item.icon, id: item.id })
+    setSearchParams({ ...searchParams, selected: item.icon, id: item._id })
   }
   const onClickAmount = (item) => {
     console.log(item)
+    setSearchParams({ ...searchParams, selected: item.icon, id: item._id })
   }
   return (
     <div style={{ bottom: '100px', backgroundColor: '#FFF' }}>

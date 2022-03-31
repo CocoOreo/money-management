@@ -63,7 +63,7 @@ export const ExpenseList = ({
     setShowOverlay(false)
     if (value) {
       const param = {
-        id: searchParams.get('id'),
+        _id: searchParams.get('id'),
         amount: Number(value)
       }
       try {
@@ -86,14 +86,14 @@ export const ExpenseList = ({
     setShowKeyboard(false)
   }
 
-  const beforeClose = ({ position }) => {
+  const beforeClose = ({ position, name }) => {
     switch (position) {
       case 'left':
       case 'cell':
       case 'outside':
         return true
       case 'right':
-        onClickDelete({ id: searchParams.get('id') })
+        onClickDelete({ _id: name })
         return true
 
       default:
@@ -127,6 +127,7 @@ export const ExpenseList = ({
                           <SwipeCell
                             beforeClose={beforeClose}
                             key={index}
+                            name={item._id}
                             rightAction={
                               <div
                                 style={{ height: '100%', padding: '0 10px ' }}>
