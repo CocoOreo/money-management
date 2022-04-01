@@ -8,7 +8,7 @@ export const RankList = ({ rank }) => {
       <List>
         <Cell>
           <div className={style.title}>
-            <p>{!rank.type ? 'Expense Rank' : 'Income Rank'}</p>
+            <p>{'Expense Rank'}</p>
           </div>
           <div className={style['list-wrapper']}>
             {rank.list.length ? (
