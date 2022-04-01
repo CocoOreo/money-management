@@ -74,8 +74,7 @@ export const SettingScreen = () => {
                 style={{
                   fontSize: '18px',
                   textAlign: 'start',
-                  padding: '18px 0px 0px 26px',
-                  fontFamily: 'fantasy'
+                  padding: '18px 0px 0px 26px'
                 }}>
                 BILL
               </div>
