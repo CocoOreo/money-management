@@ -29,7 +29,6 @@
       .aphorism {
         font-size: $font-size-medium-x;
         font-weight: 400;
-        font-family: fantasy;
         display: flex;
         height: 100%;
         justify-content: center;
@@ -46,11 +45,9 @@
       align-items: center;
       padding: 0 24px 0 28px;
       justify-content: space-between;
-      font-family: fantasy;
       p {
         line-height: 68px;
         font-size: $font-size-large;
-        font-family: fantasy;
       }
     }
     .body {
@@ -104,7 +101,7 @@
   display: flex;
   align-items: center;
   height: 64%;
-  font-family: fantasy;
+  // font-family: fantasy;
   .calendar {
     flex-grow: 1;
     border-right: 1px solid rgba($color: #000000, $alpha: 0.4);
