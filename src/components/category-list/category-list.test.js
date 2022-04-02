@@ -55,3 +55,12 @@ test('After the star icon in number keypad is clicked, the calendar should show 
   const calendar = wrapper.getByTestId('calendar')
   expect(calendar).toBeVisible()
 })
+
+test('After click enter in number keypad, return json object', () => {
+  const onFinish = jest.fn()
+  const wrapper = render(createCategoryList(expenseTab))
+  const icon = wrapper.getAllByTestId('cart-o')
+  fireEvent.click(icon[1])
+  const enter = wrapper.getByText('Enter')
+  fireEvent.click(enter)
+})
