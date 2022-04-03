@@ -78,6 +78,7 @@ export const CategoryList = (props) => {
         return (
           <div key={index} className={style['icon-block']}>
             <div
+              data-testid="cart-o"
               className={
                 searchParams.get('selected') === item.name ? (
                   `${style.icon} ${style.active}`
@@ -95,7 +96,9 @@ export const CategoryList = (props) => {
       <div
         className={style['amount-popup']}
         style={showKeyboard ? { display: 'block' } : { visibility: 'hidden' }}>
-        <div className={style['amount-wrapper']}>Amount: ${numStr}</div>
+        <div className={style['amount-wrapper']} data-testid="amount">
+          Amount: ${numStr}
+        </div>
       </div>
       <NumberKeyboard
         theme="custom"
@@ -110,21 +113,23 @@ export const CategoryList = (props) => {
         zIndex={3000}
       />
       <ConfigProvider>
-        <Calendar
-          visible={showDate}
-          onClose={() => {
-            handlDateClose()
-          }}
-          weekdays={['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thur.', 'Fri.', 'Sat']}
-          formatMonthTitle={(date) =>
-            date.getFullYear() + '  ' + getMonthWord(date.getMonth() + 1)}
-          confirmText={'Confirm'}
-          cancelButtonText={'  '}
-          title={'Calendar'}
-          onConfirm={handleSelectDate}
-          minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
-          maxDate={new Date()}
-        />
+        <div data-testid="calendar">
+          <Calendar
+            visible={showDate}
+            onClose={() => {
+              handlDateClose()
+            }}
+            weekdays={['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thur.', 'Fri.', 'Sat']}
+            formatMonthTitle={(date) =>
+              date.getFullYear() + '  ' + getMonthWord(date.getMonth() + 1)}
+            confirmText={'Confirm'}
+            cancelButtonText={'  '}
+            title={'Calendar'}
+            onConfirm={handleSelectDate}
+            minDate={new Date(new Date().getFullYear() - 2, 1, 0)}
+            maxDate={new Date()}
+          />
+        </div>
       </ConfigProvider>
     </div>
   )
