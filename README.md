@@ -1,3 +1,33 @@
+# marmot-music
+A Money Management App for mobiles based on Reanct
+
+## Screenshots
+### Detail Page
+<div>
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/detail.png"/>
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/category.png" />
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/add.png" />
+</div>
+
+### Line Chart, Pie Chart and Rank List
+<div>
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/line%20chart.png" /> 
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/pie-chart.png" />
+</div>
+
+### Budget
+<div>
+  <img width="200" src="https://github.com/CocoOreo/money-management/blob/main/screenshots/budget.png" />
+</div>
+
+### Feature
+- [x] Add, edit and delete expense and income records.
+- [x] Expense Line Chart
+- [x] Expense Pie Chart
+- [x] Expense Rank List
+- [x] Budget
+- [x] ...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
