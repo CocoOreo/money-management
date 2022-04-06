@@ -1,4 +1,4 @@
-# marmot-music
+# Money-management
 A Money Management App for mobiles based on Reanct
 
 ## Screenshots
