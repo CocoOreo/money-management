@@ -1,5 +1,5 @@
 # Money-management
-A Money Management App for mobiles based on Reanct
+A Money Management App for mobiles based on React
 
 ## Screenshots
 ### Detail Page
